@@ -1,10 +1,9 @@
-// var volumeControl = document.getElementsByClassName('slider');
-// console.log(volumeControl);
+// If the Global Play button is clicked, then play all the sounds, at 50% vol to start
 
-// volumeControl.forEach.addEventListener('change', function() {
-// });
+// If a user wants to turn down the sound, then use the slider to set the audio
 
-var audios = document.querySelectorAll('audio');
+
+var audios = document.querySelector('global-play-btn');
 var soundsArray = document.querySelectorAll('.slider');
 
 function playAllAudios() {
