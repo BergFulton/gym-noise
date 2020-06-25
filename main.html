@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Gym Noise, brah!</title>
 </head>
 
 <body>
@@ -15,26 +15,25 @@
     bro.
   </p>
 
-  <!-- Click the trigger button to play all music-->
-  <button id="global-play-btn">hide me eventually</button>
-  9
 
-  <audio src="sounds/boom.wav" autoplay muted>
+
+  <input type="button" value="PLAY" onclick="play()">
+  <audio id="global-play-btn" src="sounds/IMG_0493.m4a"></audio>
+
+
+  <!-- <audio src="sounds/boom.wav" autoplay muted>
     <p>
       If you are reading this, it is because your browser does not support the
       audio element.
     </p>
     <embed src="sounds/boom.wav" width="180" height="90" hidden="true" />
-  </audio>
-  <div class="slidecontainer">
-    <label for="grunting">Grunting</label>
-    <input type="range" min="1" max="100" value="50" class="slider" id="grunting" />
-  </div>
+  </audio> -->
+
   <div class="slidecontainer">
     <label for="plate-rattle">Plates Rattling</label>
-    <audio id="sound" autoplay muted>
-      <source src="sounds/boom.wav" type="audio/wav" />
-    </audio>
+  <input type="button" value="PLAY" onclick="play()">
+    <audio class="secondary-btn" src="sounds/platerattle.m4a"></audio>
+
     <input type="range" min="1" max="100" value="50" class="slider" id="plate-rattle" />
   </div>
 </body>
