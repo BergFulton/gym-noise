@@ -1,46 +1,44 @@
+const playBtn = document.getElementById('global-play-btn');
+const pauseBtn = document.getElementById('global-pause-btn');
+const sounds = document.querySelectorAll('.sound-sample');
+const volume = document.querySelectorAll(sounds.volume);
+// console.log(sounds);
+const volumeSlider = document.querySelectorAll('.vol_slider');
+//turn all sounds on
+function playSounds() {
+   sounds.forEach(sound => sound.play());
+  };
+  //turn all sounds off
+  function pauseSounds() {
+    sounds.forEach(sound => sound.pause());
+};
 
+function volumeConvert(e){
+    var associatedAudioElement = e.target.previousElementSibling;
+    var volumeLevel = e.target.value;
+    associatedAudioElement.volume = volumeLevel;
+}
+//allow users to adjust volume on specific sounds
+function setVolume(){
+    // listen for onChange
+    // use something like event.target and pass that through
 
-function play() {
-    const audio = document.getElementById('global-play-btn');
-    const secondarySounds = document.getElementsByClassName('secondary-btn');
-
-    const plateRattleSlider = document.getElementById('plate-rattle');
-    const plateRattleAudio = document.getElementById('plate-rattle-audio');
-    // console.log(plateRattleAudio);
-
-    plateRattleSlider.oninput = handleInput;
-
-    function handleInput(event) {
-        console.log(`The field's value is ${event.target.value}.`);
-        const volumeLevel = event.target.value;
-        plateRattleAudio.volume = (volumeLevel/100).toFixed(2);
-        console.log(`plateRattleAudio Volume: ${plateRattleAudio.volume}`);
-    }
-    
-    if (audio.paused) {
-        // audio.play();
-        // audio.volume = 0.1;
-        // audio.value = '10';
-        // console.log(audio.volume);
-        [...secondarySounds].forEach(sound => {
-            sound.play();
-            // sound.volume = 0.9;
-            // sound.value = '90'; 
-            // console.log(sound.volume);
-   
-        });
-    } else{
-        audio.pause();
-        audio.currentTime = 0;
-        [...secondarySounds].forEach(sound => {
-            sound.pause();
-        });
-    }
+    // to your function so that you can identify which input was clicked
+    // and then figure out a way to associate that input with the audio element
+    // then set the audio volume value to the input value
+    // sounds.forEach(sound => {
+    //     // sound.volume = volumeSlider.value / 100;
+    //     // get the value from the input
+    //     // set that value to a var
+    //     // use that variable to set sound.volume
+    //     sound.volume = 
+    // })
 }
 
-//TODO:
-// 1) Add more audio
-// 2) Function to turn indivudal sound volumes up and down (look at event.target to figure out which item
-//is being effected)
-// 3) GLobal slider to make all sound quieter
-// 4) Styles
+// add an event listener to each input
+volumeSlider.forEach((slider) => {
+    slider.addEventListener('change', volumeConvert);
+});
+
+playBtn.addEventListener('click', playSounds);
+pauseBtn.addEventListener('click', pauseSounds);

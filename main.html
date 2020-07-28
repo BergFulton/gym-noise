@@ -15,27 +15,29 @@
     bro.
   </p>
 
+  <h2>PLAY BUTTON</h2>
+
+  <button id="global-play-btn" class="mute">Play Sounds</button>
+  <button id="global-pause-btn" class="mute">Pause Sounds</button>
 
 
-  <input type="button" value="PLAY" onclick="play()">
-  <audio id="global-play-btn" src="sounds/IMG_0493.m4a"></audio>
+  <!-- <audio class="sound-sample" src="sounds/background_noise.m4a" autoplay loop>
+    Your browser does not support the <code>audio</code> element.
+  </audio>
+
+  <audio class="sound-sample" src="sounds/nearly_empty_gym.m4a" autoplay loop>
+    Your browser does not support the <code>audio</code> element.
+  </audio>-->
+  <label for="plate-rattle">Plates Rattling</label>
+  <audio class="sound-sample" src="sounds/platerattle.m4a" autoplay loop>
+    Your browser does not support the <code>audio</code> element.
+  </audio>
+  <input type="range" name="volume" class="vol_slider" id="plate-rattle" min="0" max="1" step="0.05" value="0.5">
 
 
-  <!-- <audio src="sounds/boom.wav" autoplay muted>
-    <p>
-      If you are reading this, it is because your browser does not support the
-      audio element.
-    </p>
-    <embed src="sounds/boom.wav" width="180" height="90" hidden="true" />
-  </audio> -->
 
-  <div class="slidecontainer">
-    <label for="plate-rattle">Plates Rattling</label>
-    <input type="button" value="PLAY" onclick="play()">
-    
-    <audio id="plate-rattle-audio" class="secondary-btn" src="sounds/platerattle.m4a"></audio>
-    <input type="range" min="1" max="100" value="50" class="slider" id="plate-rattle" />
-  </div>
+  <!--   
+  <input id="stopButton" type="button" value="Stop All Audio" /> -->
 </body>
 <script src="js/scripts.js"></script>
 
