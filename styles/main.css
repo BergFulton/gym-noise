@@ -5,14 +5,14 @@
     background-repeat: no-repeat;
   }
 
-  .intro {
+  .info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .intro span{
+  .info span{
     margin: 10px;
     padding: 10px;
     background-color: white;
